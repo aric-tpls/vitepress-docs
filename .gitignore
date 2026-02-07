@@ -17,8 +17,8 @@ __pycache__
 
 # vitepress cache
 dist
-.vitepress/cache/
-.vitepress/temp/
+**/.vitepress/cache/
+**/.vitepress/temp/
 
 # Environment variables
 .env.local
