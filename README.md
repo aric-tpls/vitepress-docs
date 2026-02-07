@@ -10,19 +10,24 @@
 
 ## 使用模板
 
-使用 `rif` 工具从模板创建新项目：
+### 使用 rifc 替换
+
+1. 复制模板到新目录
+2. 修改 `rif.config.yaml` 中的变量值
+3. 运行替换：
 
 ```bash
-rif create vitepress-docs my-new-docs
-```
+# 设置环境变量（可选）
+export PROJECT_NAME=my-docs
+export SITE_TITLE=My Docs
+export SITE_DESCRIPTION=My personal documentation
+export GITHUB_USERNAME=johndoe
+export AUTHOR_NAME=John Doe
+export SITE_BASE=/
 
-按提示输入以下信息：
-- `PROJECT_NAME`: 项目名称（用于 package.json）
-- `SITE_TITLE`: 网站标题
-- `SITE_DESCRIPTION`: 网站描述
-- `GITHUB_USERNAME`: GitHub 用户名
-- `AUTHOR_NAME`: 作者名称
-- `SITE_BASE`: 网站基础路径（根目录用 `/`，GitHub Pages 用 `/项目名/`）
+# 执行替换
+rifc
+```
 
 ## 开发
 
