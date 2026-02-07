@@ -57,7 +57,7 @@ export default defineConfig({
           useTitleFromFrontmatter: true,
           hyphenToSpace: true,
           excludePattern: ['README.md'],
-          debugPrint: true
+          debugPrint: false
         }),
         search: {
           provider: 'local',
@@ -120,7 +120,7 @@ export default defineConfig({
           useTitleFromFrontmatter: true,
           hyphenToSpace: true,
           excludePattern: ['README.md'],
-          debugPrint: true
+          debugPrint: false
         }),
         search: {
           provider: 'local',
