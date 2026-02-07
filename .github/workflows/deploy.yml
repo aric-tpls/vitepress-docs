@@ -68,6 +68,6 @@ jobs:
         run: |
           REPO_NAME=${{ github.repository }}
           PAGE_URL="https://${{ github.repository_owner }}.github.io/${REPO_NAME#*/}/"
-          echo "### 🎉 部署成功！" >> $GITHUB_STEP_SUMMARY
+          echo "### 🎉 Deployed to: $PAGE_URL" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "访问地址：[$PAGE_URL]($PAGE_URL)" >> $GITHUB_STEP_SUMMARY
+          echo "Access URL: [$PAGE_URL]($PAGE_URL)" >> $GITHUB_STEP_SUMMARY 
