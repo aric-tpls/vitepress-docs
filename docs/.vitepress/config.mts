@@ -1,0 +1,153 @@
+import { defineConfig } from 'vitepress'
+import { generateSidebar } from 'vitepress-sidebar'
+import dotenv from 'dotenv'
+import { fileURLToPath } from 'url'
+import path from 'path'
+import { VitePWA } from 'vite-plugin-pwa'
+import { pwaConfig } from './pwa.config'
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
+const projectRoot = path.resolve(__dirname, '../..')
+dotenv.config({ path: path.resolve(projectRoot, '.env') })
+
+export default defineConfig({
+  base: process.env.VITEPRESS_BASE || '/',
+  lastUpdated: true,
+  head: [['link', { rel: 'icon', href: '/favicon.svg', type: 'image/svg+xml' }]],
+  title: 'SITE_TITLE',
+  description: 'SITE_DESCRIPTION',
+  outDir: '../dist',
+  vite: {
+    plugins: [
+      VitePWA(pwaConfig)
+    ]
+  },
+  locales: {
+    root: {
+      label: '简体中文',
+      lang: 'zh-CN',
+      title: 'SITE_TITLE',
+      description: 'SITE_DESCRIPTION',
+      themeConfig: {
+        logo: '/favicon.svg',
+        lastUpdated: {
+          text: '更新时间'
+        },
+        docFooter: {
+          prev: '上一页',
+          next: '下一页'
+        },
+        outline: {
+          label: '大纲',
+          level: [2, 3]
+        },
+        nav: [
+          { text: '首页', link: '/' },
+          { text: '组件', link: '/posts/components/index.md' },
+          { text: 'Utils', link: '/posts/utils/index.md' },
+          { text: '规范', link: '/posts/standard/index.md' },
+          { text: '事故', link: '/posts/incidents/index.md' }
+        ],
+        sidebar: generateSidebar({
+          documentRootPath: '/docs',
+          scanStartPath: '/posts',
+          collapsed: false,
+          capitalizeFirst: true,
+          useTitleFromFileHeading: true,
+          useTitleFromFrontmatter: true,
+          hyphenToSpace: true,
+          excludePattern: ['README.md'],
+          debugPrint: true
+        }),
+        search: {
+          provider: 'local',
+          options: {
+            translations: {
+              button: {
+                buttonText: '搜索',
+                buttonAriaLabel: '搜索文档'
+              },
+              modal: {
+                noResultsText: '无法找到相关结果',
+                resetButtonTitle: '清除查询条件',
+                footer: {
+                  selectText: '选择',
+                  navigateText: '切换',
+                  closeText: '关闭'
+                }
+              }
+            }
+          }
+        },
+        socialLinks: [{ icon: 'github', link: 'https://github.com/GITHUB_USERNAME' }],
+        footer: {
+          message: '基于 MIT 许可发布',
+          copyright: 'Copyright © 2019-present AUTHOR_NAME'
+        }
+      }
+    },
+    en: {
+      label: 'English',
+      lang: 'en',
+      title: 'SITE_TITLE',
+      description: 'SITE_DESCRIPTION',
+      themeConfig: {
+        logo: '/favicon.svg',
+        lastUpdated: {
+          text: 'Last updated'
+        },
+        docFooter: {
+          prev: 'Previous',
+          next: 'Next'
+        },
+        outline: {
+          label: 'On this page',
+          level: [2, 3]
+        },
+        nav: [
+          { text: 'Home', link: '/en/' },
+          { text: 'Components', link: '/en/posts/components/index.md' },
+          { text: 'Utils', link: '/en/posts/utils/index.md' },
+          { text: 'Standard', link: '/en/posts/standard/index.md' },
+          { text: 'Incidents', link: '/en/posts/incidents/index.md' }
+        ],
+        sidebar: generateSidebar({
+          documentRootPath: '/docs/en',
+          scanStartPath: '/posts',
+          collapsed: false,
+          capitalizeFirst: true,
+          useTitleFromFileHeading: true,
+          useTitleFromFrontmatter: true,
+          hyphenToSpace: true,
+          excludePattern: ['README.md'],
+          debugPrint: true
+        }),
+        search: {
+          provider: 'local',
+          options: {
+            translations: {
+              button: {
+                buttonText: 'Search',
+                buttonAriaLabel: 'Search documentation'
+              },
+              modal: {
+                noResultsText: 'No results for',
+                resetButtonTitle: 'Reset search',
+                footer: {
+                  selectText: 'to select',
+                  navigateText: 'to navigate',
+                  closeText: 'to close'
+                }
+              }
+            }
+          }
+        },
+        socialLinks: [{ icon: 'github', link: 'https://github.com/GITHUB_USERNAME' }],
+        footer: {
+          message: 'Released under the MIT License.',
+          copyright: 'Copyright © 2019-present AUTHOR_NAME'
+        }
+      }
+    }
+  }
+})
