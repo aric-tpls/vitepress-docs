@@ -6,8 +6,8 @@
   "description": "SITE_DESCRIPTION",
   "license": "MIT",
   "scripts": {
-    "dev": "vitepress dev src",
-    "build": "vitepress build src",
+    "dev": "vitepress dev .",
+    "build": "vitepress build .",
     "preview": "vitepress preview --port 4173 dist"
   },
   "devDependencies": {

@@ -7,16 +7,17 @@ import { VitePWA } from 'vite-plugin-pwa'
 import { pwaConfig } from './pwa.config'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
-const projectRoot = path.resolve(__dirname, '../..')
+const projectRoot = path.resolve(__dirname, '..')
 dotenv.config({ path: path.resolve(projectRoot, '.env') })
 
 export default defineConfig({
+  srcDir: './src',
   base: process.env.VITEPRESS_BASE || '/',
   lastUpdated: true,
   head: [['link', { rel: 'icon', href: '/favicon.svg', type: 'image/svg+xml' }]],
   title: 'SITE_TITLE',
   description: 'SITE_DESCRIPTION',
-  outDir: '../dist',
+  outDir: './dist',
   vite: {
     plugins: [
       VitePWA(pwaConfig)
@@ -49,7 +50,7 @@ export default defineConfig({
           { text: '事故', link: '/posts/incidents/index.md' }
         ],
         sidebar: generateSidebar({
-          documentRootPath: '/src',
+          documentRootPath: 'src',
           scanStartPath: '/posts',
           collapsed: false,
           capitalizeFirst: true,
@@ -112,7 +113,7 @@ export default defineConfig({
           { text: 'Incidents', link: '/en/posts/incidents/index.md' }
         ],
         sidebar: generateSidebar({
-          documentRootPath: '/src/en',
+          documentRootPath: 'src/en',
           scanStartPath: '/posts',
           collapsed: false,
           capitalizeFirst: true,
