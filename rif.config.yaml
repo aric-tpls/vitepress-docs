@@ -31,6 +31,3 @@ replacements:
   # 作者名称
   - from: 'AUTHOR_NAME'
     to: 'aric'
-  # 网站基础路径 (用于 GitHub Pages 部署)
-  - from: 'SITE_BASE'
-    to: '/vitepress-docs'

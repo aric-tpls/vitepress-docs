@@ -49,7 +49,7 @@ export default defineConfig({
           { text: '事故', link: '/posts/incidents/index.md' }
         ],
         sidebar: generateSidebar({
-          documentRootPath: '/docs',
+          documentRootPath: '/src',
           scanStartPath: '/posts',
           collapsed: false,
           capitalizeFirst: true,
@@ -112,7 +112,7 @@ export default defineConfig({
           { text: 'Incidents', link: '/en/posts/incidents/index.md' }
         ],
         sidebar: generateSidebar({
-          documentRootPath: '/docs/en',
+          documentRootPath: '/src/en',
           scanStartPath: '/posts',
           collapsed: false,
           capitalizeFirst: true,
