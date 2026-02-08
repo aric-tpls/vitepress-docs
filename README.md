@@ -19,11 +19,11 @@
 ```bash
 # 设置环境变量（可选）
 export PROJECT_NAME=my-docs
-export SITE_TITLE=My Docs
-export SITE_DESCRIPTION=My personal documentation
+export SITE_TITLE="My Docs"
+export SITE_DESCRIPTION="My personal documentation"
 export GITHUB_USERNAME=johndoe
-export AUTHOR_NAME=John Doe
-export SITE_BASE=/
+export AUTHOR_NAME="John Doe"
+export SITE_BASE=/  # 或 /project-name/ 用于 GitHub Pages
 
 # 执行替换
 rifc
@@ -48,24 +48,24 @@ pnpm preview
 ## 项目结构
 
 ```
-├── docs/
-│   ├── .vitepress/
-│   │   ├── config.mts       # VitePress 配置
-│   │   ├── pwa.config.ts    # PWA 配置
-│   │   └── theme/           # 自定义主题
-│   ├── public/              # 静态资源
+├── .vitepress/              # VitePress 配置
+│   ├── config.mts           # 主配置文件
+│   ├── pwa.config.ts        # PWA 配置
+│   └── theme/               # 自定义主题
+├── src/                     # 文档源目录
 │   ├── posts/               # 中文文档
 │   ├── en/posts/            # 英文文档
 │   ├── index.md             # 中文首页
 │   └── en/index.md          # 英文首页
-├── .env                     # 环境变量
+├── public/                  # 静态资源
+├── .env                     # 环境变量（VITE_ 开头）
 ├── package.json
 └── rif.config.yaml          # 模板配置
 ```
 
 ## 添加内容
 
-在 `docs/posts/` 或 `docs/en/posts/` 目录下创建 `.md` 文件，侧边栏会自动生成。
+在 `src/posts/` 或 `src/en/posts/` 目录下创建 `.md` 文件，侧边栏会自动生成。
 
 ## 配置
 
@@ -77,8 +77,10 @@ pnpm preview
 
 编辑 `.env` 配置部署路径：
 ```
-VITEPRESS_BASE=/your-project-name/
+VITE_BASE_URL=/your-project-name/
 ```
+
+**注意：** 环境变量必须以 `VITE_` 开头才能被 VitePress 的 `loadEnv` 读取。
 
 ## 部署到 GitHub Pages
 

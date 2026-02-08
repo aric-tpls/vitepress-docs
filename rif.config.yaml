@@ -8,11 +8,11 @@ files:
   - "package.json"
   - ".env"
   # VitePress 配置
-  - "docs/.vitepress/config.mts"
-  - "docs/.vitepress/pwa.config.ts"
+  - ".vitepress/config.mts"
+  - ".vitepress/pwa.config.ts"
   # 首页
-  - "docs/index.md"
-  - "docs/en/index.md"
+  - "src/index.md"
+  - "src/en/index.md"
 
 # 模板变量替换规则
 replacements:
@@ -21,13 +21,16 @@ replacements:
     to: '${PROJECT_NAME}'
   # 网站标题 (显示在页面标题、导航栏等)
   - from: 'SITE_TITLE'
-    to: 'Awesome Docs'
+    to: '${SITE_TITLE}'
   # 网站描述
   - from: 'SITE_DESCRIPTION'
-    to: 'This is a awesome documentation site powered by VitePress.'
+    to: '${SITE_DESCRIPTION}'
   # GitHub 用户名
   - from: 'GITHUB_USERNAME'
-    to: 'afeiship'
+    to: '${GITHUB_USERNAME}'
   # 作者名称
   - from: 'AUTHOR_NAME'
-    to: 'aric'
+    to: '${AUTHOR_NAME}'
+  # 网站基础路径 (用于 GitHub Pages 部署，必须以 VITE_ 开头)
+  - from: 'VITE_BASE_URL'
+    to: '${SITE_BASE}'
