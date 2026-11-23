@@ -1,33 +1,10 @@
-# VitePress 文档模板配置
-name: vitepress-docs-template
-description: VitePress 文档站点模板，支持 PWA 和双语（中英文）
-
-# 需要进行模板变量替换的文件
+name: replace-in-files
 files:
-  # 配置文件
-  - "package.json"
-  - ".env"
-  # VitePress 配置
-  - ".vitepress/config.mts"
-  - ".vitepress/pwa.config.ts"
-  # 首页
-  - "src/index.md"
-  - "src/en/index.md"
-
-# 模板变量替换规则
+  - ".*"
+  - "*"
+  - "!rif.config.yaml"
 replacements:
-  # 项目名称 (package.json name 字段)
-  - from: 'PROJECT_NAME'
-    to: '${PROJECT_NAME}'
-  # 网站标题 (显示在页面标题、导航栏等)
-  - from: 'SITE_TITLE'
-    to: 'SiteTitle'
-  # 网站描述
-  - from: 'SITE_DESCRIPTION'
-    to: 'Awesome site description'
-  # GitHub 用户名
-  - from: 'GITHUB_USERNAME'
-    to: 'afeiship'
-  # 作者名称
-  - from: 'AUTHOR_NAME'
-    to: 'aric.zheng'
+  - from: /vitepress-docs/g
+    to: ${vitepress-docs}
+  - from: PROJECT_DESCRIPTION
+    to: "The notes for this project are in the README.md file."

@@ -15,7 +15,7 @@ export default defineConfig({
     ["link", { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" }],
   ],
   title: "SITE_TITLE",
-  description: "SITE_DESCRIPTION",
+  description: "PROJECT_DESCRIPTION",
   outDir: "./dist",
   vite: {
     plugins: [VitePWA(pwaConfig)],
@@ -25,7 +25,7 @@ export default defineConfig({
       label: "简体中文",
       lang: "zh-CN",
       title: "SITE_TITLE",
-      description: "SITE_DESCRIPTION",
+      description: "PROJECT_DESCRIPTION",
       themeConfig: {
         logo: "/favicon.svg",
         lastUpdated: {
@@ -90,7 +90,7 @@ export default defineConfig({
       label: "English",
       lang: "en",
       title: "SITE_TITLE",
-      description: "SITE_DESCRIPTION",
+      description: "PROJECT_DESCRIPTION",
       themeConfig: {
         logo: "/favicon.svg",
         lastUpdated: {

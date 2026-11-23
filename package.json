@@ -1,9 +1,9 @@
 {
-  "name": "PROJECT_NAME",
+  "name": "vitepress-docs",
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "SITE_DESCRIPTION",
+  "description": "PROJECT_DESCRIPTION",
   "license": "MIT",
   "scripts": {
     "dev": "vitepress dev .",

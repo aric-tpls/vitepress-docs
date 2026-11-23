@@ -6,7 +6,7 @@ export const pwaConfig: Partial<VitePWAOptions> = {
   manifest: {
     name: 'SITE_TITLE',
     short_name: 'SITE_TITLE',
-    description: 'SITE_DESCRIPTION',
+    description: 'PROJECT_DESCRIPTION',
     theme_color: '#3eaf7c',
     background_color: '#ffffff',
     display: 'standalone',

@@ -3,7 +3,7 @@ layout: home
 
 hero:
   name: 'SITE_TITLE'
-  text: 'SITE_DESCRIPTION'
+  text: 'PROJECT_DESCRIPTION'
   actions:
     - theme: brand
       text: Get Started

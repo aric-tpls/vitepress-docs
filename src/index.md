@@ -2,15 +2,15 @@
 layout: home
 
 hero:
-  name: 'SITE_TITLE'
-  text: 'SITE_DESCRIPTION'
+  name: 'vitepress-docs'
+  text: 'PROJECT_DESCRIPTION'
   actions:
     - theme: brand
       text: 开始使用
       link: /posts/standard/index.md
     - theme: alt
       text: Github 主页
-      link: https://github.com/GITHUB_USERNAME
+      link: https://github.com/afeiship
 
 features:
   - icon: 🎣

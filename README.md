@@ -18,9 +18,9 @@
 
 ```bash
 # 设置环境变量（可选）
-export PROJECT_NAME=my-docs
+export vitepress-docs=my-docs
 export SITE_TITLE="My Docs"
-export SITE_DESCRIPTION="My personal documentation"
+export PROJECT_DESCRIPTION="My personal documentation"
 export GITHUB_USERNAME=johndoe
 export AUTHOR_NAME="John Doe"
 export SITE_BASE=/  # 或 /project-name/ 用于 GitHub Pages
