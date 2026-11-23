@@ -33,4 +33,4 @@ ps:
 
 # preview
 preview:
-  gsv dist -p 4173
+  gsv dist -b vitepress-docs
